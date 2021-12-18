@@ -169,11 +169,11 @@ Partial Class Form1
         Me.BTNSlew.BackColor = System.Drawing.Color.Red
         Me.BTNSlew.Enabled = False
         Me.BTNSlew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNSlew.Location = New System.Drawing.Point(371, 112)
+        Me.BTNSlew.Location = New System.Drawing.Point(305, 112)
         Me.BTNSlew.Name = "BTNSlew"
-        Me.BTNSlew.Size = New System.Drawing.Size(75, 48)
+        Me.BTNSlew.Size = New System.Drawing.Size(141, 48)
         Me.BTNSlew.TabIndex = 36
-        Me.BTNSlew.Text = "Slew"
+        Me.BTNSlew.Text = "Slew to Flat Panel"
         Me.BTNSlew.UseVisualStyleBackColor = False
         '
         'Label10
@@ -272,11 +272,11 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(522, 385)
+        Me.Label7.Location = New System.Drawing.Point(530, 385)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 13)
+        Me.Label7.Size = New System.Drawing.Size(59, 13)
         Me.Label7.TabIndex = 63
-        Me.Label7.Text = "Mount Angle"
+        Me.Label7.Text = "DEC Angle"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Timer3
@@ -555,7 +555,7 @@ Partial Class Form1
         Me.Controls.Add(Me.BTNSelect)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Polar Assist1.0"
+        Me.Text = "Flat Panel Assist1.0"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

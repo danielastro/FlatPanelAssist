@@ -105,6 +105,7 @@
     Public Sub WhereisMount()
         'Calculates current Mount position , displays it
         'also calculates MOUNT Angle
+        'Runs when timer1 is enabled
         MountSideofPier = objtelescope.SideOfPier
 
         MountRA = objtelescope.RightAscension * 15
@@ -116,6 +117,8 @@
         MountAzimuth = objtelescope.Azimuth
         TBAltitude.Text = DDtohms(objtelescope.Altitude, 2)
         TBAzimuth.Text = DDtohms(objtelescope.Azimuth, 2)
+        Form2.CurAlt.Text = DDtohms(objtelescope.Altitude, 2)
+        Form2.CurAz.Text = DDtohms(objtelescope.Azimuth, 2)
 
         If MountSideofPier = 0 Then
             TBSideofpier.Text = "Pier East"
@@ -229,8 +232,17 @@
         Form2.BTSlewUp.Enabled = False
         Form2.BTSlewDown.Enabled = False
 
-        TBLSidereal.Text = " "
-        TBMountSidereal.Text = " "
+        TBLSidereal.Text = ""
+        TBMountSidereal.Text = ""
+        TBRa.Text = ""
+        TBDec.Text = ""
+        TBAltitude.Text = ""
+        TBAzimuth.Text = ""
+        TBMountAngle.Text = ""
+        TBSideofpier.Text = ""
+        Form2.CurAlt.Text = ""
+        Form2.CurAz.Text = ""
+
 
     End Sub
     Private Sub BTNConnect_Click(sender As Object, e As EventArgs) Handles BTNConnect.Click
@@ -290,7 +302,6 @@
         MountSiderealTime = objtelescope.SiderealTime
         TBMountSidereal.Text = DDtohms(MountSiderealTime, 1)
     End Sub
-
     Private Sub Getlatlong()
         ' Store Mount longitude in SiteLong 
         SiteLong = objtelescope.SiteLongitude
@@ -313,6 +324,7 @@
         objtelescope.SlewToTargetAsync()
         BTNAbort.BackColor = Color.Yellow
 
+        'Stop tracking facing Flat Panel
         objtelescope.Tracking = False
 
     End Sub
@@ -330,19 +342,6 @@
         'box.Show()
         Form2.Show()
     End Sub
-    Private Sub BTSlewLeft_MouseDown(sender As Object, e As MouseEventArgs)
-        objtelescope.MoveAxis(0, -4)
-    End Sub
-    Private Sub BTSlewLeft_MouseUp(sender As Object, e As MouseEventArgs)
-        objtelescope.MoveAxis(0, 0)
-    End Sub
-    Private Sub BTSlewRight_MouseDown(sender As Object, e As MouseEventArgs)
-        objtelescope.MoveAxis(0, 4)
-    End Sub
-    Private Sub BTSlewRight_MouseUp(sender As Object, e As MouseEventArgs)
-        objtelescope.MoveAxis(0, 0)
-    End Sub
-
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
 
         TenthSec = TenthSec + 1

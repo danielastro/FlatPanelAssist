@@ -197,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlatPanelAssist.ico" />
-    <Content Include="PolarAssist2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

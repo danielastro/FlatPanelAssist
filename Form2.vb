@@ -2,7 +2,6 @@
 
     Dim FlatAltitude As Double = My.Settings.FlatAltitude
     Dim FlatAzimuth As Double = My.Settings.FlatAzimuth
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TBConfigScope.Text = My.Settings.Telescope
 
@@ -19,6 +18,7 @@
     Private Sub BTSlewLeft_MouseDown(sender As Object, e As MouseEventArgs) Handles BTSlewLeft.MouseDown
         Form1.objtelescope.MoveAxis(0, -4)
     End Sub
+
     Private Sub BTSlewLeft_MouseUp(sender As Object, e As MouseEventArgs) Handles BTSlewLeft.MouseUp
         Form1.objtelescope.MoveAxis(0, 0)
     End Sub
@@ -40,7 +40,6 @@
     Private Sub BTSlewDown_MouseUp(sender As Object, e As MouseEventArgs) Handles BTSlewDown.MouseUp
         Form1.objtelescope.MoveAxis(1, 0)
     End Sub
-
 
 
 
@@ -89,4 +88,6 @@
         TBAzimuth.Text = Form1.DDtohms(FlatAzimuth, 2)
 
     End Sub
+
+
 End Class
